@@ -148,3 +148,66 @@ for i in range(len(a)):
             fc-=1
 print(uc)    
 """
+#Chef stones game
+"""
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+    # your code goes here
+    c=0
+    b=sorted(a,reverse=True)
+    for i in range(0,len(b),2):
+        c+=b[i]
+    print(c)
+"""
+#Limak nice sequence
+"""
+# cook your dish here
+t= int(input())
+c=[]
+for i in range(t):
+    n=int(input())
+    a=list(map(int,input().split()))
+    a.sort()
+    c.append(a[-1])
+    #print(a)
+    for j in range(len(a)-1):
+        if (a[j+1]-a[j]) == 0:
+            c[i]=a[j]
+     #       print(c)
+            break
+        elif (a[j+1]-a[j]) > 1 and j==0:
+            c[i]=a[j]
+      #      print(c)
+            break
+for j in range(t):
+    print(c[j])
+"""
+#Zigzag array
+"""
+t=int(input())
+c=[]
+d=[]
+for i in range(t):
+    n=int(input())
+    a=list(map(int,input().split()))
+    d.append(a)
+
+for j in range(t):    
+    if (len(d[j])==1):
+        c.append(d[j])
+        continue
+    i=0
+    a=d[j]
+    while (i < len(a)-1):
+        if ((i%2)==0 and a[i]>a[i+1]):
+            a[i],a[i+1]=a[i+1],a[i]
+        elif ((i%2)==1 and a[i]<a[i+1]):
+            a[i],a[i+1]=a[i+1],a[i]
+        i+=1
+        #print(a)
+    c.append(a)
+for r in range(t):
+    print(*c[r])
+"""            
