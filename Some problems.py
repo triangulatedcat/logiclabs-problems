@@ -210,4 +210,52 @@ for j in range(t):
     c.append(a)
 for r in range(t):
     print(*c[r])
-"""     """m"""       
+"""     
+#Way too long words
+"""
+n = int(input())
+strgs=[]
+nstrgs=[]
+for i in range (n):
+    s=str(input())
+    strgs.append(s)
+    if len(s) > 10:
+        nstrgs.append(s[0] + str(len(s)-2) + s[len(s)-1])
+    else:
+        nstrgs.append(s)
+for j in range(n):
+    print(nstrgs[j])
+"""
+"""
+s=str(input())
+l = list(map(str,s.split('+')))
+l.sort()
+print("+".join(l)) 
+"""
+"""
+s=str(input())
+print(s[0].upper() + s[1:])
+"""
+"""
+k,n,w = map(int,input().split())
+c=(k*w*(w+1)/2) - n
+if c>0:
+    print(int(c))
+else:
+    print(0)
+"""
+"""
+n,k = map(int,input().split())
+while (k > 0):
+    c = n%10
+   # print(n,k)
+    if c == 0:
+        n = int(n/10)
+        k-=1
+       # print(n,k)
+    else:
+        n = n - 1
+        k-=1
+      #  print(n,k)
+print(n) 
+"""
