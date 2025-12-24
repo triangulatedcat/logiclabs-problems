@@ -259,3 +259,55 @@ while (k > 0):
       #  print(n,k)
 print(n) 
 """
+"""
+s= str(input())
+t= str(input())
+rev_s= s[::-1]
+if rev_s == t:
+    print("YES")
+else:
+    print("NO")
+"""
+"""
+n=int(input())
+s=[]
+t=0
+for r in range(n):
+    a,b = map(int,input().split())
+    t+= (b-a)
+    s.append(t)
+s.sort()
+print(s[-1])
+"""
+# cook your dish here
+"""
+import math
+t=int(input())
+h=[]
+for r in range(t):
+    n=int(input())
+    s=math.floor(math.sqrt(2*n))
+    while (s**2 + s > 2*n):
+        s-=1
+    h.append(s)
+for r in range(t):
+    print(h[r])
+"""
+import math
+t=int(input())
+c=[]
+
+for r in range(t):
+    n,k = map(int,input().split())
+    l=list(map(int,input().split()))
+    #carrots.append(l)
+    j=0
+    i=0
+    while (i<len(l)):
+        if (k**math.floor(math.log(l[i],k)) == l[i]):
+            j+=1
+        i+=1
+    c.append(j)
+    
+for r in range(t):
+    print(c[r])
