@@ -103,7 +103,7 @@ for char in s:
 if c>0:
     print(s.upper())
 else:
-    print(s.lower())
+print(s.lower())
 """
 
 #Magnets
@@ -291,7 +291,8 @@ for r in range(t):
         s-=1
     h.append(s)
 for r in range(t):
-    print(h[r])
+    print(h[r])       
+"""
 """
 import math
 t=int(input())
@@ -311,3 +312,10 @@ for r in range(t):
     
 for r in range(t):
     print(c[r])
+    """
+   
+
+
+                    
+
+
