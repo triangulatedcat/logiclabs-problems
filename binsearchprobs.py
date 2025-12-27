@@ -1,6 +1,6 @@
 
 import math
-def mybinsearch(a,l,r,x):
+def mybinsearch1(a,l,r,x):
         ans=-1
         while l<=r:
                 m = l + ((r-l)//2)
@@ -12,31 +12,27 @@ def mybinsearch(a,l,r,x):
                 else:
                     l=m+1
         return ans
-"""
-def binary_search(arr, x):
-    low = 0
-    high = len(arr) - 1
-
-    while low <= high:
-        mid = low + (high - low) // 2
-
-        if arr[mid] < x:
-            low = mid + 1
-        elif arr[mid] > x:
-            high = mid - 1
-        else:
-            return mid
-    return -1
-"""
-
-#Rectangles
 
 w,h,n = map(int,input().split())
 u=max(n*w+1,n*h+1)
-l=math.floor(math.sqrt(n*w*h))-1
-b=list( ((r//w)*(r//h) - n) for r in range(max(n*w+1,n*h+1)) ) 
-x= mybinsearch(b,l,u,0)
-print(x)
+l=max(w,h)
+#b=list( ((r//w)*(r//h) - n) for r in range(max(n*w+1,n*h+1)) ) 
+#x= mybinsearch(b,l,u,0)
+#print(x)
+ans=-1
+print(l,ans,u)
+while l<=u:
+                m = l + ((u-l)//2)
+                print(l,m,u,ans)
+                if ((l//w)*(l//h) - n)==0:
+                    ans=l
+                    break
+                elif ((m//w)*(m//h) - n) >=  0:
+                    u=m
+                else:
+                    l=m+1
+                print(l,m,u,ans)
+print(ans)
       
 
 
