@@ -17,18 +17,22 @@ def canwecut(x):
         x = x*(-1)
     pieces=0
     for i in range(n):
-        pieces+= a[i]//x
+        pieces+= (a[i]//x)
     if pieces >= k:
          return 1
     else:
          return 0
 a=[]
 ubound=0
+#lbound=0
 n,k = map(int,input().split())
 for i in range(n):
-    a.append((10**6)*int(input()))
+    a.append((10**7)*int(input()))
+#    lbound=a[0]
     if a[i] > ubound:
          ubound=a[i]
+#    if a[i] < lbound:
+#         lbound=a[i]
 firstans= mybinsearch2(canwecut,-ubound-1,0,1) * (-1)
-theans= f"{str(firstans//(10**6))}.{str(firstans%(10**6))}"
-print(theans) 
+theans= f"{str(firstans//(10**7))}.{str(firstans%(10**7))}"
+print(float(theans)) 
