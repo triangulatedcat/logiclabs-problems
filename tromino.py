@@ -13,3 +13,4 @@ def howmanyways2(n):
     #print(dpa)
     #print(dpb)
     return dpa[n]
+#print(howmanyways2(1))
