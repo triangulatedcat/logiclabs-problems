@@ -1,7 +1,7 @@
 def findaLIS(a):
     dp=[]
+    m=1
     for i in range(len(a)):
-        m=1
         if i == 0:
             dp.append(1)
         else:
