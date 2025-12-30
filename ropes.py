@@ -34,5 +34,6 @@ for i in range(n):
 #    if a[i] < lbound:
 #         lbound=a[i]
 firstans= mybinsearch2(canwecut,-ubound-1,0,1) * (-1)
-theans= f"{str(firstans//(10**7))}.{str(firstans%(10**7))}"
-print(float(theans)) 
+secans= str(firstans)
+theans= f"{secans[0:-7]}.{secans[-7:]}"
+print(theans)
