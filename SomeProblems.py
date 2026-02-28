@@ -312,10 +312,70 @@ for r in range(t):
     
 for r in range(t):
     print(c[r])
-    """
    
+#In search easy problem
+t = int(input())
+ans=""Easy""
+l = list(map(int,input().split()))
+for r in range(t):
+    if l[r]==1:
+        ans=""Hard""
+        break
+    else:
+        continue
+print(ans)
+
+n = int(input())
+l=[]
+ans=0
+for r in range(n):
+    l.append(list(map(int,input().split())))
+    if l[r][1] - l[r][0] > 1:
+       ans+=1
+print(ans)
+
+#Inverse array
+n=int(input())
+l=list(map(int,input().split()))
+ans=[0]*(len(l))
+for r in range(len(l)):
+    ans[l[r]-1]=r+1
+    #print(*ans)
+print(*ans)
 
 
-                    
+from decimal import Decimal, getcontext
+getcontext().prec = 7
 
+n=int(input())
+l=list(map(int,input().split()))                 
+print(Decimal(sum(l))/Decimal(n))
+
+
+a=str(input())
+b=str(input())
+c=[]
+for r in range(len(a)):
+    c.append(int(a[r])^int(b[r]))
+print(*c,sep='')
+
+l=list(map(int,input().split()))
+s=set(l)
+print(len(l)-len(s))
+"""
+n=int(input())
+l=list(map(int,input().split()))
+l.sort()
+s=sum(l)
+i=len(l)-1
+ans=0
+r=0
+if s<n:
+    ans=-1
+else:
+    while (r<n):
+        r+=l[i]
+        i-=1
+    ans = len(l) - 1 - i    
+print(ans)
 
