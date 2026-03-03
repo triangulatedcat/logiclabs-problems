@@ -362,7 +362,8 @@ print(*c,sep='')
 l=list(map(int,input().split()))
 s=set(l)
 print(len(l)-len(s))
-"""
+
+#Business trip
 n=int(input())
 l=list(map(int,input().split()))
 l.sort()
@@ -378,4 +379,4 @@ else:
         i-=1
     ans = len(l) - 1 - i    
 print(ans)
-
+"""
