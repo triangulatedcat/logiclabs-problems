@@ -1,39 +1,44 @@
-def mybinsearch2(f,l,r,x):
-        ans=-1
-        while l<=r:
-                m = l + ((r-l)//2)
-                #print(l,m,r,n*w*h,l**2)
-                if f(l)==x:
-                    ans=l
-                    break
-                elif f(m) >=  x:
-                    r=m
-                else:
-                    l=m+1
-        return ans
+from decimal import Decimal, getcontext, ROUND_HALF_UP
+getcontext().prec = 10
+#this outputs the max possible
+#index i such that x is >= f(i) or -1 if there is no such index 
+# f is a non-decreasing function on integers 
+def mybinsearch3(f,l,r,x): 
+    ans=-1
+    if f(l) > x:
+        ans = -1
+    elif l==r:
+        ans=r
+    else:
+        while (l<r):
+            m = (l+r)//2
+            if f(m) > x:
+                r=m
+            elif f(m+1)<=x:
+                l=m+1
+            else:
+                r=m
+        ans=r        
+    return (ans)
 
 def canwecut(x):
-    if x<0:
-        x = x*(-1)
     pieces=0
-    for i in range(n):
-        pieces+= (a[i]//x)
-    if pieces >= k:
-         return 1
-    else:
-         return 0
+    canwe=2
+    for _ in range(n):
+        pieces+= (a[_]//x)
+        if pieces >= k :
+            canwe=1
+            break
+    return (canwe)
+
 a=[]
 ubound=0
-#lbound=0
 n,k = map(int,input().split())
 for i in range(n):
     a.append((10**7)*int(input()))
-#    lbound=a[0]
     if a[i] > ubound:
-         ubound=a[i]
-#    if a[i] < lbound:
-#         lbound=a[i]
-firstans= mybinsearch2(canwecut,-ubound-1,0,1) * (-1)
-secans= str(firstans)
-theans= f"{secans[0:-7]}.{secans[-7:]}"
+         ubound=a[i] + 1
+
+firstans= mybinsearch3(canwecut,1000,ubound,1)
+theans = Decimal(firstans) / Decimal(10**7)
 print(theans)
